@@ -5,10 +5,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        //Random random = new Random();
-        //int secretNumber = random.nextInt(1000, 10000);
-        int secretNumber = 9305;
+    public static void main(String[] args) throws Exception {
+        int length = new Scanner(System.in).nextInt();
+        int secretNumber = randomNumberGenerator(length);
         System.out.println(grader(secretNumber));
     }
 
@@ -40,4 +39,39 @@ public class Main {
             return "Grade: None. the secret code is " + secret;
         }
     }
+
+    public static int randomNumberGenerator(int length) throws Exception {
+        Random random = new Random(System.nanoTime());
+        if(length > 10){
+            throw new Exception("Error: can't generate a secret number with a length of" + length
+                    + " because there aren't enough unique digits.");
+        }
+        int temp_number = 0;
+        StringBuilder number = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            temp_number = random.nextInt(10);
+            number.append(temp_number);
+        }
+        System.out.println("The random secret number is " + number);
+        return Integer.parseInt(number.toString());
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

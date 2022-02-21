@@ -115,5 +115,19 @@ files:
     }
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/5431#comment
-status: Unchecked
+status: Failed
+feedback:
+  message: |-
+    Wrong answer in test #1
+
+    Digits in the generated number are not unique.
+
+    Please find below the output of your program during this failed test.
+    Note that the &#39;&gt;&#39; character indicates the beginning of the input line.
+
+    ---
+
+    &gt; 4
+    The random secret number is 5447
+  time: Mon, 21 Feb 2022 13:16:28 UTC
 record: -1
